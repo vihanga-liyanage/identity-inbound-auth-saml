@@ -674,12 +674,11 @@ public class SAMLSSOProviderServlet extends HttpServlet {
         resp.addHeader("Cache-Control", "no-cache");
         String encodedArtifact = URLEncoder.encode(artifact, "UTF-8");
 
-        String redirectURL = assertionConsumerUrl;
         String queryParams = "?" + SAMLSSOConstants.SAML_ART + "=" + encodedArtifact;
         if(relayState != null) {
             queryParams += "&" + SAMLSSOConstants.RELAY_STATE + "=" + relayState;
         }
-        resp.sendRedirect(redirectURL + queryParams);
+        resp.sendRedirect(assertionConsumerUrl + queryParams);
     }
 
     /**
