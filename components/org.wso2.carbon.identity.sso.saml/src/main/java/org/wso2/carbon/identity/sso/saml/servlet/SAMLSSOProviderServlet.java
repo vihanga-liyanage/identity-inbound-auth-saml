@@ -943,7 +943,7 @@ public class SAMLSSOProviderServlet extends HttpServlet {
                 storeTokenIdCookie(sessionId, req, resp, authnReqDTO.getTenantDomain());
                 removeSessionDataFromCache(req.getParameter(SAMLSSOConstants.SESSION_DATA_KEY));
 
-                if (SAMLSSOUtil.isSAMLArtifactBindingEnabled()) {
+                if (authnReqDTO.isEnableSAML2ArtifactBinding()) {
                     sendArtifact(req, resp, relayState, authRespDTO.getRespString(),
                             authRespDTO.getAssertionConsumerURL());
                 } else {

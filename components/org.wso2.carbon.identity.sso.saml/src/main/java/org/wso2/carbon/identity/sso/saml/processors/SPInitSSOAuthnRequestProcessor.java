@@ -168,7 +168,7 @@ public class SPInitSSOAuthnRequestProcessor implements SSOAuthnRequestProcessor{
                 // Build the response for the successful scenario
                 samlssoRespDTO = new SAMLSSORespDTO();
 
-                if (SAMLSSOUtil.isSAMLArtifactBindingEnabled()) {
+                    if (authnReqDTO.isEnableSAML2ArtifactBinding()) {
                     // Build and store SAML artifact
                     SAMLArtifactBuilder samlArtifactBuilder = new SAMLArtifactBuilder();
                     String artifact = samlArtifactBuilder.buildAndSaveSAML2Artifact(authnReqDTO, sessionIndexId);
@@ -294,6 +294,7 @@ public class SPInitSSOAuthnRequestProcessor implements SSOAuthnRequestProcessor{
         authnReqDTO.setAssertionEncryptionAlgorithmUri(ssoIdpConfigs.getAssertionEncryptionAlgorithmUri());
         authnReqDTO.setKeyEncryptionAlgorithmUri(ssoIdpConfigs.getKeyEncryptionAlgorithmUri());
         authnReqDTO.setAssertionQueryRequestProfileEnabled(ssoIdpConfigs.isAssertionQueryRequestProfileEnabled());
+        authnReqDTO.setEnableSAML2ArtifactBinding(ssoIdpConfigs.isEnableSAML2ArtifactBinding());
     }
 
     /**

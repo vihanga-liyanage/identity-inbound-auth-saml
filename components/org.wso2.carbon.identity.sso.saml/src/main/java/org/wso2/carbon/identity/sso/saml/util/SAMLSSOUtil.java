@@ -1930,6 +1930,8 @@ public class SAMLSSOUtil {
     }
 
     public static boolean isSAMLArtifactBindingEnabled() {
+
+
         // TODO: 7/1/18 Implement method body
         return true;
     }
