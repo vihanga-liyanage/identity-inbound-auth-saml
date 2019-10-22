@@ -35,14 +35,6 @@
     </description>
     <url>http://wso2.org</url>
 
-    <scm>
-        <url>https://github.com/wso2-extensions/identity-inbound-auth-saml.git</url>
-        <developerConnection>scm:git:https://github.com/wso2-extensions/identity-inbound-auth-saml.git
-        </developerConnection>
-        <connection>scm:git:https://github.com/wso2-extensions/identity-inbound-auth-saml.git</connection>
-        <tag>v5.6.14</tag>
-    </scm>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -333,18 +325,6 @@
         </pluginManagement>
 
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <preparationGoals>clean install</preparationGoals>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-            </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
